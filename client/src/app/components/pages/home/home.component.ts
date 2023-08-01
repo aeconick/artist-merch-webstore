@@ -20,6 +20,8 @@ export class HomeComponent {
         this.items = this.itemService.getItemsBySearchTerm(
           params['searchTerm']
         );
+      } else if (params['tag']) {
+        this.items = this.itemService.getAllItemsByTag(params['tag']);
       } else {
         this.items = itemService.getAll();
       }
