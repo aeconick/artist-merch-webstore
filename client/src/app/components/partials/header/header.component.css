@@ -42,7 +42,7 @@ ul a {
 a span {
   background: #0f1d28;
   color: white;
-  padding: 0.1rem 0.45rem;
+  padding: 0.1rem 0.45rem 0.2rem 0.45rem;
   border-radius: 100rem;
   font-size: 0.9rem;
 }
