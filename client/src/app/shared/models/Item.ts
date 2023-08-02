@@ -6,6 +6,5 @@ export class Item {
   favorite!: boolean;
   stars!: number;
   imageUrl!: string;
-  origins!: string[];
   description!: string;
 }

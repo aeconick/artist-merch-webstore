@@ -18,12 +18,6 @@
     <!-- </div> -->
   </div>
 
-  <div class="origins">
-    <span *ngFor="let origin of item.origins">
-      {{ origin }}
-    </span>
-  </div>
-
   <div class="tags">
     <a *ngFor="let tag of item.tags" routerLink="/tag/{{ tag }}">
       {{ tag }}

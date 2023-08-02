@@ -48,20 +48,6 @@ img {
   color: grey;
 }
 
-.origins {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 1rem 0;
-}
-
-.origins span {
-  padding: 0.5rem;
-  font-size: 1.2rem;
-  margin: 0.5rem 0.5rem 0.5rem 0;
-  border-radius: 2rem;
-  background-color: aliceblue;
-}
-
 .tags {
   display: flex;
   flex-wrap: wrap;
