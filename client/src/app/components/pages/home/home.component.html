@@ -1,5 +1,9 @@
 <app-search />
 <app-tags />
+<app-not-found
+  [visible]="!items || !items.length"
+  resetLinkText="Reset Search"
+/>
 <ul>
   <li *ngFor="let item of items">
     <a routerLink="/item/{{ item.id }}">
