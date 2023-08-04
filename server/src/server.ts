@@ -1,8 +1,11 @@
 import express from "express";
 import cors from "cors";
-import { sample_items, sample_tags } from "./data";
+import jwt from "jsonwebtoken";
+
+import { sample_items, sample_tags, sample_users } from "./data";
 
 const app = express();
+app.use(express.json());
 
 app.use(
   cors({
@@ -38,6 +41,33 @@ app.get("/items/:itemId", (req, res) => {
   const item = sample_items.find((item) => item.id == itemId);
   res.send(item);
 });
+
+app.post("/users/login", (req, res) => {
+  const { email, password } = req.body;
+  const user = sample_users.find(
+    (user) => user.email == email && user.password == password
+  );
+
+  if (user) {
+    res.send(generateTokenResponse(user));
+  } else {
+    res.status(400).send("Username or password is incorrect!");
+  }
+});
+
+const generateTokenResponse = (user: any) => {
+  const token = jwt.sign(
+    {
+      email: user.email,
+      isAdmin: user.isAdmin,
+    },
+    "1312",
+    { expiresIn: "30d" }
+  );
+
+  user.token = token;
+  return user;
+};
 
 const port = 5500;
 app.listen(port, () => {
