@@ -17,6 +17,8 @@ import { CartPageComponent } from './components/pages/cart-page/cart-page.compon
 import { TitleComponent } from './components/partials/title/title.component';
 import { NotFoundComponent } from './components/partials/not-found/not-found.component';
 import { LoginPageComponent } from './components/pages/login-page/login-page.component';
+import { InputContainerComponent } from './components/partials/input-container/input-container.component';
+import { InputValidationComponent } from './components/partials/input-validation/input-validation.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { LoginPageComponent } from './components/pages/login-page/login-page.com
     TitleComponent,
     NotFoundComponent,
     LoginPageComponent,
+    InputContainerComponent,
+    InputValidationComponent,
   ],
   imports: [
     BrowserModule,
