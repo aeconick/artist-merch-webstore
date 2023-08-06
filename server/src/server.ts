@@ -1,8 +1,13 @@
 import express from "express";
 import cors from "cors";
+import dotenv from 'dotenv';
 
 import itemRouter from "./routers/item.router";
 import userRouter from "./routers/user.router";
+import { dbConnect } from "./configs/database.config";
+
+dotenv.config();
+dbConnect();
 
 const app = express();
 app.use(express.json());

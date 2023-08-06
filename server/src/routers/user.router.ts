@@ -1,21 +1,39 @@
 import { Router } from "express";
 import jwt from "jsonwebtoken";
+import asyncHandler from "express-async-handler";
+
+import { UserModel } from "../models/user.model";
 import { sample_users } from "../data";
 
 const router = Router();
 
-router.post("/login", (req, res) => {
-  const { email, password } = req.body;
-  const user = sample_users.find(
-    (user) => user.email == email && user.password == password
-  );
+router.get(
+  "/seed",
+  asyncHandler(async (req, res) => {
+    const usersCount = await UserModel.countDocuments();
+    if (usersCount > 0) {
+      res.send("Seed is already done!");
+      return;
+    }
 
-  if (user) {
-    res.send(generateTokenResponse(user));
-  } else {
-    res.status(400).send("Username or password is incorrect!");
-  }
-});
+    await UserModel.create(sample_users);
+    res.send("Seed is done!");
+  })
+);
+
+router.post(
+  "/login",
+  asyncHandler(async (req, res) => {
+    const { email, password } = req.body;
+    const user = await UserModel.findOne({ email, password });
+
+    if (user) {
+      res.send(generateTokenResponse(user));
+    } else {
+      res.status(400).send("Username or password is incorrect!");
+    }
+  })
+);
 
 const generateTokenResponse = (user: any) => {
   const token = jwt.sign(
@@ -28,7 +46,15 @@ const generateTokenResponse = (user: any) => {
   );
 
   user.token = token;
-  return user;
+  
+  return {
+    id: user.id,
+    email: user.email,
+    name: user.name,
+    address: user.address,
+    isAdmin: user.isAdmin,
+    token: token
+  };
 };
 
 export default router;

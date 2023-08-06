@@ -1,6 +1,6 @@
 export const sample_items: any[] = [
   {
-    id: "1",
+    //id: "1",
     name: "Taylor Swift",
     description: "afasfasf",
     price: 10,
@@ -10,7 +10,7 @@ export const sample_items: any[] = [
     tags: ["ts", "taylor"],
   },
   {
-    id: "2",
+    //id: "2",
     name: "Joe Alwyn",
     price: 20,
     description: "fasfasf",

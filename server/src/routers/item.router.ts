@@ -1,34 +1,93 @@
 import { Router } from "express";
+import asyncHandler from "express-async-handler";
+
+import { ItemModel } from "../models/item.model";
 import { sample_items, sample_tags } from "../data";
 
 const router = Router();
 
-router.get("/", (req, res) => {
-  res.send(sample_items);
-});
+router.get(
+  "/seed",
+  asyncHandler(async (req, res) => {
+    const itemsCount = await ItemModel.countDocuments();
+    if (itemsCount > 0) {
+      res.send("Seed is already done!");
+      return;
+    }
 
-router.get("/search/:searchTerm", (req, res) => {
-  const searchTerm = req.params.searchTerm;
-  const items = sample_items.filter((item) =>
-    item.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-  res.send(items);
-});
+    await ItemModel.create(sample_items);
+    res.send("Seed is done!");
+  })
+);
 
-router.get("/tags", (req, res) => {
-  res.send(sample_tags);
-});
+router.get(
+  "/",
+  asyncHandler(async (req, res) => {
+    const items = await ItemModel.find();
+    res.send(items);
+  })
+);
 
-router.get("/tag/:tagName", (req, res) => {
-  const tagName = req.params.tagName;
-  const items = sample_items.filter((item) => item.tags?.includes(tagName));
-  res.send(items);
-});
+router.get(
+  "/search/:searchTerm",
+  asyncHandler(async (req, res) => {
+    const searchRegex = new RegExp(req.params.searchTerm, "i");
 
-router.get("/:itemId", (req, res) => {
-  const itemId = req.params.itemId;
-  const item = sample_items.find((item) => item.id == itemId);
-  res.send(item);
-});
+    const items = await ItemModel.find({ name: { $regex: searchRegex } });
+
+    res.send(items);
+  })
+);
+
+router.get(
+  "/tags",
+  asyncHandler(async (req, res) => {
+    const tags = await ItemModel.aggregate([
+      {
+        $unwind: "$tags",
+      },
+      {
+        $group: {
+          _id: "$tags",
+          count: { $sum: 1 },
+        },
+      },
+      {
+        $project: {
+          _id: 0,
+          name: "$_id",
+          count: "$count",
+        },
+      },
+    ]).sort({ count: -1 });
+
+    const all = {
+      name: "All",
+      count: await ItemModel.countDocuments(),
+    };
+
+    tags.unshift(all);
+
+    res.send(tags);
+  })
+);
+
+router.get(
+  "/tag/:tagName",
+  asyncHandler(async (req, res) => {
+    const items = await ItemModel.find({ tags: req.params.tagName });
+
+    res.send(items);
+  })
+);
+
+router.get(
+  "/:itemId",
+  asyncHandler(async (req, res) => {
+    const item = await ItemModel.findById(req.params.itemId);
+
+    res.send(item);
+  })
+);
 
 export default router;
