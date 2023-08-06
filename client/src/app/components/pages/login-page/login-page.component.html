@@ -18,6 +18,12 @@
       />
 
       <default-button text="Login" />
+      <div class="register">
+        New user? &nbsp;
+        <a routerLink="/register" [queryParams]="{ returnUrl: returnUrl }"
+          >Register here</a
+        >
+      </div>
     </form>
   </div>
 </div>
