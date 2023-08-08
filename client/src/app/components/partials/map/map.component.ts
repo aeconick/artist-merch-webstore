@@ -1,5 +1,6 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import {
+  LatLng,
   LatLngExpression,
   LatLngTuple,
   LeafletMouseEvent,
@@ -11,6 +12,7 @@ import {
   tileLayer,
 } from 'leaflet';
 import { LocationService } from 'src/app/services/location.service';
+import { Order } from 'src/app/shared/models/Order';
 
 @Component({
   selector: 'map',
@@ -18,6 +20,8 @@ import { LocationService } from 'src/app/services/location.service';
   styleUrls: ['./map.component.css'],
 })
 export class MapComponent implements OnInit {
+  @Input()
+  order!: Order;
   private readonly MARKER_ZOOM_LEVEL = 16;
   private readonly MARKER_ICON = icon({
     iconUrl:
@@ -64,7 +68,7 @@ export class MapComponent implements OnInit {
   }
 
   setMarker(latlng: LatLngExpression) {
-    // this.addressLatLng = latlng as LatLng;
+    this.addressLatLng = latlng as LatLng; // this is calling the set method
     if (this.currentMarker) {
       this.currentMarker.setLatLng(latlng);
       return;
@@ -75,8 +79,22 @@ export class MapComponent implements OnInit {
       icon: this.MARKER_ICON,
     }).addTo(this.map);
 
-    // this.currentMarker.on('dragend', () => {
-    //   this.addressLatLng = this.currentMarker.getLatLng();
-    // })
+    this.currentMarker.on('dragend', () => {
+      this.addressLatLng = this.currentMarker.getLatLng();
+    });
+  }
+
+  //for mongodb - cant accept float with more than 8 floating points
+  set addressLatLng(latlng: LatLng) {
+    if (!latlng.lat.toFixed) return;
+
+    latlng.lat = parseFloat(latlng.lat.toFixed(8));
+    latlng.lng = parseFloat(latlng.lng.toFixed(8));
+    this.order.addressLatLng = latlng;
+    console.log(this.order.addressLatLng);
+  }
+
+  get addressLatLng() {
+    return this.order.addressLatLng!;
   }
 }
