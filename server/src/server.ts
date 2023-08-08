@@ -1,10 +1,11 @@
 import express from "express";
 import cors from "cors";
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
 
 import itemRouter from "./routers/item.router";
 import userRouter from "./routers/user.router";
 import { dbConnect } from "./configs/database.config";
+import orderRouter from "./routers/order.router";
 
 dotenv.config();
 dbConnect();
@@ -21,6 +22,7 @@ app.use(
 
 app.use("/items", itemRouter);
 app.use("/users", userRouter);
+app.use("/orders", orderRouter);
 
 const port = 5500;
 app.listen(port, () => {
