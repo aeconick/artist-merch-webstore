@@ -3,24 +3,28 @@
     <a routerLink="/" class="logo">TStore</a>
     <nav>
       <ul>
+        <li>
+          <a routerLink="/">Merch</a>
+        </li>
         <li *ngIf="!isAuth">
           <a routerLink="/login">Login</a>
         </li>
         <li *ngIf="!isAuth">
           <a routerLink="/register">Register</a>
         </li>
-        <li *ngIf="isAuth" class="merch-container">
-          <a routerLink="/dashboard">{{ user.name }}</a>
-          <div class="merch">
-            <a routerLink="/profile">Profile</a>
-            <a routerLink="/orders">Orders</a>
-            <a (click)="logout()">Logout</a>
-          </div>
+        <li *ngIf="isAuth">
+          <a routerLink="/profile">Profile</a>
+        </li>
+        <li *ngIf="isAuth">
+          <a (click)="logout()">Logout</a>
         </li>
         <li>
           <a routerLink="/cart-page">
             Cart <span *ngIf="cartQuantity">{{ cartQuantity }}</span>
           </a>
+        </li>
+        <li>
+          <a routerLink="/about">About</a>
         </li>
       </ul>
     </nav>
