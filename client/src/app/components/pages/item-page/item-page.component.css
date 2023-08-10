@@ -39,15 +39,6 @@ img {
   font-weight: bold;
 }
 
-.favorite {
-  color: #ad9db8;
-  font-size: 2.5rem;
-}
-
-.favorite.not {
-  color: grey;
-}
-
 .tags {
   display: flex;
   flex-wrap: wrap;

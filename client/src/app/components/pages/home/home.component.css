@@ -36,17 +36,6 @@ ul{
     height: 7rem;
   }
   
-  .favorite{
-    position: absolute;
-    top: 0.5rem;
-    right: 1rem;
-    font-size: 1.2rem;
-  }
-  
-  .favorite.not{
-    color: grey;
-  }
-  
   .stars{
     margin-bottom: 0.2rem;
   }
