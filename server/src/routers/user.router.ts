@@ -28,7 +28,7 @@ router.post(
     const { email, password } = req.body;
     const user = await UserModel.findOne({ email, password });
 
-    if (user) {
+    if (user && (await bcrypt.compare(password, user.password))) {
       res.send(generateTokenResponse(user));
     } else {
       res.status(400).send("Username or password is incorrect!");

@@ -3,6 +3,7 @@ import { Order } from '../shared/models/Order';
 import { HttpClient } from '@angular/common/http';
 import {
   ORDERS_PAY_URL,
+  ORDERS_TRACK_URL,
   ORDER_CREATE_URL,
   ORDER_NEW_FOR_CURRENT_USER_URL,
 } from '../shared/constants/urls';
@@ -24,5 +25,9 @@ export class OrderService {
 
   pay(order: Order): Observable<string> {
     return this.http.post<string>(ORDERS_PAY_URL, order);
+  }
+
+  trackOrderById(id: number): Observable<Order> {
+    return this.http.get<Order>(ORDERS_TRACK_URL + id);
   }
 }
