@@ -36,10 +36,6 @@ ul{
     height: 7rem;
   }
   
-  .stars{
-    margin-bottom: 0.2rem;
-  }
-  
   .product-item-footer{
     display: flex;
     justify-content: space-between;

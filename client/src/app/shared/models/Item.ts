@@ -3,7 +3,6 @@ export class Item {
   name!: string;
   price!: number;
   tags?: string[];
-  stars!: number;
   imageUrl!: string;
   description!: string;
 }
