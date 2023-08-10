@@ -1,0 +1,20 @@
+@import url(' https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css');
+
+footer {
+    background-color: #ad9db8;
+    color: #0f1d28;
+    align-items: center;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer article {
+    display: flex;
+    gap: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #0f1d28;
+  }
