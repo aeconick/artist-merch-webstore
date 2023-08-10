@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Order } from '../shared/models/Order';
 import { HttpClient } from '@angular/common/http';
 import {
+  ORDERS_PAY_URL,
   ORDER_CREATE_URL,
   ORDER_NEW_FOR_CURRENT_USER_URL,
 } from '../shared/constants/urls';
@@ -19,5 +20,9 @@ export class OrderService {
 
   getNewOrderForCurrentUser(): Observable<Order> {
     return this.http.get<Order>(ORDER_NEW_FOR_CURRENT_USER_URL);
+  }
+
+  pay(order: Order): Observable<string> {
+    return this.http.post<string>(ORDERS_PAY_URL, order);
   }
 }
