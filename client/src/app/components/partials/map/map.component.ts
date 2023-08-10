@@ -33,7 +33,7 @@ export class MapComponent implements OnChanges {
   private readonly MARKER_ZOOM_LEVEL = 16;
   private readonly MARKER_ICON = icon({
     iconUrl:
-      'https://res.cloudinary.com/foodmine/image/upload/v1638842791/map/marker_kbua9q.png',
+      'https://drive.google.com/uc?export=view&id=1Ts_a1V35vJyKSvamv6oyJYTp4mWJyOFd',
     iconSize: [42, 42],
     iconAnchor: [21, 42],
   });
