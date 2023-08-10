@@ -49,7 +49,7 @@ router.post(
     const encryptedPassword = await bcrypt.hash(password, 10);
 
     const newUser: User = {
-      id: "",
+      // id: "",
       name,
       email: email.toLowerCase(),
       password: encryptedPassword,
