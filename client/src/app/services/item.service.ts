@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Item } from '../shared/models/Item';
-import { sample_items, sample_tags } from 'src/data';
-import { Tag } from '../shared/models/Tags';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+
+import { Item } from '../shared/models/Item';
+import { Tag } from '../shared/models/Tags';
 import {
   ITEMS_BY_SEARCH_URL,
   ITEMS_BY_TAG_URL,
