@@ -40,13 +40,12 @@ Components use services to make api calls and share access to data. The services
  - ***Order*** service - deals with the orders data.
  - ***User*** service - deals with all the information about the user.
 
- The services folders has four files that communicate with the backend:
- - ***authService*** - return an object with three functions: **login**, **register** and **logout**.
- - ***commentService*** - manages api calls to server about the **comments** on a Log.
- - ***logService*** - handles all **CRUD** operations performed on a Log.
- - ***requester*** - assembles the **request** sent to the **server** based on method, url and data. Exports all **methods** needed in a form of an object.
-
-
+ The shated folder has four folder that add additional functionality:
+ - ***Constants*** - stores files with constant data like: **urls**.
+ - ***Interceptors*** - stores files with interceptors like: **loading.interceptor**.
+ - ***Interfaces*** - stores files with interfaces like: **IUserLogin** or **IUserRegister**.
+ - ***Models*** - stores files with models like: **Cart**, **Item**, **User**, etc.
+ - ***Validator*** - stores files with validators like: **password_match_validator**.
 
  ### Starting The Application
  The repository consists of two folders: **client** and **server**.
@@ -54,14 +53,13 @@ Components use services to make api calls and share access to data. The services
 1. To start the server you need to open a new terminal at the **server** directory and run the command:
 
 ```console
-node server.js
+npm i
+npm start
 ```
 
 2. To start the client you need to open a new terminal at the **client** directory and run the command:
 
 ```console
+npm i
 npm start
 ```
- 
- 
- 
