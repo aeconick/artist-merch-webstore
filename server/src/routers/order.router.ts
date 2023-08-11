@@ -73,4 +73,19 @@ router.get(
   })
 );
 
+router.get(
+  "/allUserOrders/:id",
+  asyncHandler(async (req, res) => {
+    
+    const orders = await OrderModel.find({ user: req.params.id });
+
+    if (orders.length == 0) {
+      res.status(400).send("Orders Not Found!");
+      return;
+    }
+
+    res.send(orders);
+  })
+);
+
 export default router;

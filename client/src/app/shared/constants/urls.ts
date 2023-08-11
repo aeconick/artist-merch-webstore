@@ -15,3 +15,4 @@ export const ORDER_NEW_FOR_CURRENT_USER_URL =
   ORDERS_URL + '/newOrderForCurrentUser';
 export const ORDERS_PAY_URL = ORDERS_URL + '/pay';
 export const ORDERS_TRACK_URL = ORDERS_URL + '/track/';
+export const ORDERS_ALL_BY_USER_ID = ORDERS_URL + '/allUserOrders/';

@@ -32,6 +32,7 @@ import { PaypalButtonComponent } from './components/partials/paypal-button/paypa
 import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 import { FooterComponent } from './components/partials/footer/footer.component';
 import { AboutPageComponent } from './components/pages/about-page/about-page.component';
+import { ProfilePageComponent } from './components/pages/profile-page/profile-page.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { AboutPageComponent } from './components/pages/about-page/about-page.com
     OrderTrackPageComponent,
     FooterComponent,
     AboutPageComponent,
+    ProfilePageComponent,
   ],
   imports: [
     BrowserModule,

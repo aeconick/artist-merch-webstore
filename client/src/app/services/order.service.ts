@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Order } from '../shared/models/Order';
 import { HttpClient } from '@angular/common/http';
 import {
+  ORDERS_ALL_BY_USER_ID,
   ORDERS_PAY_URL,
   ORDERS_TRACK_URL,
   ORDER_CREATE_URL,
@@ -29,5 +30,9 @@ export class OrderService {
 
   trackOrderById(id: number): Observable<Order> {
     return this.http.get<Order>(ORDERS_TRACK_URL + id);
+  }
+
+  getOrdersByUserId(id: number): Observable<[Order]> {
+    return this.http.get<[Order]>(ORDERS_ALL_BY_USER_ID + id);
   }
 }

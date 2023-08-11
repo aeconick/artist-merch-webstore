@@ -13,7 +13,7 @@
           <a routerLink="/register">Register</a>
         </li>
         <li *ngIf="isAuth">
-          <a routerLink="/profile">Profile</a>
+          <a routerLink="/profile/{{user.id}}">Profile</a>
         </li>
         <li *ngIf="isAuth">
           <a (click)="logout()">Logout</a>
