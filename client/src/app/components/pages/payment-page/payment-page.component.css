@@ -8,14 +8,21 @@
 
 .content {
   width: 35rem;
-  margin-right: 3rem;
+  /* margin-right: 3rem; */
   display: flex;
   flex-direction: column;
 }
 
+.summary{
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+  /* border: 1px solid grey; */
+  padding: 0.6rem;
+}
+
 .summary > div {
   display: flex;
-  margin-top: 0.7rem;
+  margin-top: 1.2rem;
 }
 
 .summary span {
@@ -23,7 +30,7 @@
 }
 
 .summary h3 {
-  margin: 0 1rem 0 0;
+  margin: 0.13rem 1.2rem 0 0;
   flex-basis: 5rem;
 }
 

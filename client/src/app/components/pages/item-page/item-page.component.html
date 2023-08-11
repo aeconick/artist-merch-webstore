@@ -6,12 +6,11 @@
 <div *ngIf="item" class="container">
   <img [src]="item.imageUrl" [alt]="item.name" />
 
-  <div class="details">
-    <div class="header">
-      <span class="name">
-        {{ item.name }}
-      </span>
-    </div>
+  <div class="right-container">
+  <div class="name">
+    <span>
+      {{ item.name }}
+    </span>
   </div>
 
   <div class="tags">
@@ -25,6 +24,7 @@
       {{ item.description }}
     </span>
   </div>
+</div>
 
   <div class="price">
     <span>

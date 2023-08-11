@@ -1,60 +1,56 @@
-ul{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  li a{
-    height: 22.5rem;
-    width: 20rem;
-    border: 1px solid whitesmoke;
-    border-radius: 1rem;
-    margin: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    color: #e72929;
-  }
-  
-  li a:hover{
-    opacity: 0.9;
-    cursor: pointer;
-  }
-  
-  li a img{
-    object-fit: cover;
-    height: 14.5rem;
-  }
-  
-  .content{
-    margin-top: 0.3rem;
-    padding: 0.5rem 1rem;
-    position: relative;
-    height: 7rem;
-  }
-  
-  .product-item-footer{
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-  
-  .cook-time{
-    font-size: 0.9rem;
-    flex: 3;
-    text-align: right;
-  }
-  
-  .price{
-    position: absolute;
-    bottom: 0;
-    left: 0.9rem;
-    background: white;
-    padding: 0.3rem 100% 0 0;
-    color: #414141;
-    margin-top: 0.7rem;
-    font-size: 1.1rem;
-  }
+.merch-container {
+  margin-top: 3rem;
+  color: #0f1d28;
+  margin-bottom: 3rem;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+}
+
+li a {
+  height: 27.5rem;
+  width: 20rem;
+  border: 1px solid #ad9db8;
+  border-radius: 0.4rem;
+  text-decoration: none;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: #0f1d28;
+  font-weight: 500;
+}
+
+li a:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+li a img {
+  object-fit: contain;
+  height: 18rem;
+}
+
+.content {
+  margin-top: 0.3rem;
+  padding: 0.5rem 1rem;
+  position: relative;
+  height: 7rem;
+}
+
+.price {
+  position: absolute;
+  bottom: 0;
+  left: 0.9rem;
+  background: white;
+  padding: 0.3rem 100% 0 0;
+  color: #414141;
+  margin-top: 0.7rem;
+  font-size: 1.1rem;
+}

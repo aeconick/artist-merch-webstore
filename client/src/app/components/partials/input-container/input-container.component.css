@@ -1,8 +1,8 @@
 .container {
   position: relative;
-  margin-bottom: 0.5rem;
-  border-radius: 0.7rem;
-  padding-top: 0.3rem;
+  margin-bottom: 0.2rem;
+  border-radius: 0.2rem;
+  padding-top: 0.6rem;
   border: 1px solid #e0e0e0;
 }
 
@@ -15,7 +15,7 @@ label {
 
 .content {
   padding: 0 0.5rem;
-  height: 2.7rem;
+  height: 3.8rem;
   display: flex;
   align-items: center;
 }
