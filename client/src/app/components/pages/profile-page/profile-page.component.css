@@ -13,6 +13,7 @@
   flex-wrap: wrap;
   border: 1px solid #ad9db8;
   border-radius: 1rem;
+  min-width: 300px;
 }
 
 img {
@@ -36,15 +37,17 @@ img {
   width: 57%;
   border: 1px solid #ad9db8;
   border-radius: 1rem;
+  min-width: 740px;
 }
 
 .order {
-  border-top: 1px solid #0f1d28;
-  padding: 1rem 0 1rem 0;
+  /* border-top: 1px solid #0f1d28; */
+  /* padding: 1rem 0 1rem 0; */
 }
 
 .order div {
-  margin: 0 1rem 0 0.4rem;
+  margin: 1rem;
+  padding: 1rem;
 }
 
 .summary > div {
@@ -59,4 +62,19 @@ img {
 .summary h3 {
   padding: 0 1rem 0.4rem 0rem;
   /* flex-basis: 5rem; */
+}
+
+/* div strong {
+
+} */
+
+.order-click{
+  border: 1px solid #ad9db8;
+  border-radius: 0.2rem;
+  display: flex;
+}
+
+.order-click:hover {
+  cursor: pointer;
+  background-color: #f4f0f7;
 }

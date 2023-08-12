@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { OrderService } from 'src/app/services/order.service';
 import { UserService } from 'src/app/services/user.service';
 import { Order } from 'src/app/shared/models/Order';
@@ -17,7 +17,8 @@ export class ProfilePageComponent {
   constructor(
     userService: UserService,
     orderService: OrderService,
-    activatedRoute: ActivatedRoute
+    activatedRoute: ActivatedRoute,
+    private router: Router
   ) {
     this.user = userService.currentUser;
 
@@ -29,8 +30,11 @@ export class ProfilePageComponent {
     orderService.getOrdersByUserId(params['userId']).subscribe((orders) => {
       this.orders = orders;
       console.log(orders);
-      
     });
-    
+  }
+
+  onOrderClick(id: number) {
+    console.log(id);
+    this.router.navigateByUrl('/track/' + id);
   }
 }

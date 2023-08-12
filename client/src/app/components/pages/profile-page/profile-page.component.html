@@ -27,12 +27,16 @@
   <div class="orders">
     <app-title title="User Orders" fontSize="1.6rem" />
     <div class="order" *ngFor="let order of orders">
-      <div><strong>Date:</strong> {{ order.createdAt | date : "medium" }}</div>
-      <div><strong>Name:</strong> {{ order.name }}</div>
-      <div><strong>Address:</strong> {{ order.address }}</div>
-      <div><strong>Status:</strong> {{ order.status }}</div>
-      <div *ngIf="order.paymentId">
-        <strong>Payment ID:</strong> {{ order.paymentId }}
+      <div class="order-click" (click)="onOrderClick(order.id)">
+        <div>
+          <strong>Date:</strong> {{ order.createdAt | date }}
+        </div>
+        <div><strong>Name:</strong> {{ order.name }}</div>
+        <div><strong>Address:</strong> {{ order.address }}</div>
+        <div><strong>Status:</strong> {{ order.status }}</div>
+        <div *ngIf="order.paymentId">
+          <strong>Payment ID:</strong> {{ order.paymentId }}
+        </div>
       </div>
     </div>
   </div>
