@@ -50,9 +50,6 @@ export class CreateItemPageComponent implements OnInit {
       description: fv.description,
     };
 
-    // this.userService.register(user).subscribe((_) => {
-    //   this.router.navigateByUrl(this.returnUrl);
-    // });
     this.itemService.createItem(item).subscribe((_) => {
       this.router.navigateByUrl('/');
     });

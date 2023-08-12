@@ -19,15 +19,17 @@ export class HeaderComponent {
     userService.userObservable.subscribe((newUser) => {
       this.user = newUser;
     });
-
-    console.log(this.user.token);
   }
 
   logout() {
     this.userService.logout();
   }
 
-  get isAuth(){
+  get isAuth() {
     return this.user.token;
+  }
+
+  get isAdmin() {
+    return this.user.isAdmin;
   }
 }

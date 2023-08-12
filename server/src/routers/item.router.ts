@@ -15,6 +15,14 @@ router.post(
   })
 );
 
+router.delete(
+  "/:id",
+  asyncHandler(async (req, res) => {
+    const item = await ItemModel.findByIdAndDelete(req.params.id);
+    res.send(item);
+  })
+);
+
 router.get(
   "/",
   asyncHandler(async (req, res) => {

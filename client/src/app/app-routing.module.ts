@@ -13,6 +13,7 @@ import { AboutPageComponent } from './components/pages/about-page/about-page.com
 import { ProfilePageComponent } from './components/pages/profile-page/profile-page.component';
 import { WelcomePageComponent } from './components/pages/welcome-page/welcome-page.component';
 import { CreateItemPageComponent } from './components/pages/create-item-page/create-item-page.component';
+import { AdminGuard } from './auth/guards/admin.guard';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -47,7 +48,7 @@ const routes: Routes = [
   {
     path: 'create',
     component: CreateItemPageComponent,
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard, AdminGuard],
   },
 ];
 

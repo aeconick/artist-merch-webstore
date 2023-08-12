@@ -19,7 +19,7 @@ import { ToastrService } from 'ngx-toastr';
   providedIn: 'root',
 })
 export class ItemService {
-  constructor(private http: HttpClient,private toastrService:ToastrService) {}
+  constructor(private http: HttpClient, private toastrService: ToastrService) {}
 
   getAll(): Observable<Item[]> {
     return this.http.get<Item[]>(ITEMS_URL);
@@ -49,12 +49,29 @@ export class ItemService {
       tap({
         next: (item) => {
           this.toastrService.success(
-            `You created item ${item.name}!`,
+            `You created the item!`,
             'Create Was Successful'
           );
         },
         error: (errorResponse) => {
           this.toastrService.error(errorResponse.error, 'Create Failed');
+        },
+      })
+    );
+  }
+
+  deleteItemById(itemId: string): Observable<Item> {
+    return this.http.delete<Item>(ITEM_BY_ID_URL + itemId).pipe(
+      //cannot use .subscribe, bcs return type will be subscription and not observable
+      tap({
+        next: (item) => {
+          this.toastrService.success(
+            `You deleted the item!`,
+            'Delete Was Successful'
+          );
+        },
+        error: (errorResponse) => {
+          this.toastrService.error(errorResponse.error, 'Delete Failed');
         },
       })
     );
