@@ -2,21 +2,16 @@ import { Router } from "express";
 import asyncHandler from "express-async-handler";
 
 import { ItemModel } from "../models/item.model";
-import { sample_items } from "../data";
 
 const router = Router();
 
-router.get(
-  "/seed",
+router.post(
+  "/create",
   asyncHandler(async (req, res) => {
-    const itemsCount = await ItemModel.countDocuments();
-    if (itemsCount > 0) {
-      res.send("Seed is already done!");
-      return;
-    }
+    const item = req.body;
 
-    await ItemModel.create(sample_items);
-    res.send("Seed is done!");
+    const dbItem = await ItemModel.create(item);
+    res.send(dbItem);
   })
 );
 

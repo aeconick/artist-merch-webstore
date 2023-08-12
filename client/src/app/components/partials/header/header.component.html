@@ -1,6 +1,6 @@
 <header>
   <div class="container">
-    <a routerLink="/" class="logo">TStore</a>
+    <a routerLink="/welcome" class="logo">TStore</a>
     <nav>
       <ul>
         <li>
@@ -13,7 +13,7 @@
           <a routerLink="/register">Register</a>
         </li>
         <li *ngIf="isAuth">
-          <a routerLink="/profile/{{user.id}}">Profile</a>
+          <a routerLink="/profile/{{ user.id }}">Profile</a>
         </li>
         <li *ngIf="isAuth">
           <a (click)="logout()">Logout</a>

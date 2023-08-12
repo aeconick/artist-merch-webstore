@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="details">
+      <app-title title="Create Item"></app-title>
+      <form [formGroup]="createItemForm" (ngSubmit)="submit()">
+        <text-input
+          [control]="fc['name']"
+          [showErrorsWhen]="isSubmitted"
+          label="Name"
+        >
+          `</text-input
+        >
+  
+        <text-input
+          [control]="fc['price']"
+          [showErrorsWhen]="isSubmitted"
+          label="Price"
+        >
+          `</text-input
+        >
+  
+        <text-input
+          [control]="fc['tags']"
+          [showErrorsWhen]="isSubmitted"
+          label="Tags (eg: 'Taylor,Swift,Speak Now')"
+        >
+          `</text-input
+        >
+  
+        <text-input
+          [control]="fc['imageUrl']"
+          [showErrorsWhen]="isSubmitted"
+          label="ImageUrl"
+        >
+          `</text-input
+        >
+  
+        <text-input
+          [control]="fc['description']"
+          [showErrorsWhen]="isSubmitted"
+          label="Description"
+        >
+          `</text-input
+        >
+  
+        <default-button text="Create"></default-button>
+      </form>
+    </div>
+  </div>
+  

@@ -11,6 +11,8 @@ import { PaymentPageComponent } from './components/pages/payment-page/payment-pa
 import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 import { AboutPageComponent } from './components/pages/about-page/about-page.component';
 import { ProfilePageComponent } from './components/pages/profile-page/profile-page.component';
+import { WelcomePageComponent } from './components/pages/welcome-page/welcome-page.component';
+import { CreateItemPageComponent } from './components/pages/create-item-page/create-item-page.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,6 +23,7 @@ const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
   { path: 'register', component: RegisterPageComponent },
   { path: 'about', component: AboutPageComponent },
+  { path: 'welcome', component: WelcomePageComponent },
   {
     path: 'checkout',
     component: CheckoutPageComponent,
@@ -39,6 +42,11 @@ const routes: Routes = [
   {
     path: 'profile/:userId',
     component: ProfilePageComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'create',
+    component: CreateItemPageComponent,
     canActivate: [AuthGuard],
   },
 ];

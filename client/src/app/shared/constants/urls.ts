@@ -5,6 +5,7 @@ export const ITEMS_TAGS_URL = ITEMS_URL + '/tags';
 export const ITEMS_BY_SEARCH_URL = ITEMS_URL + '/search/';
 export const ITEMS_BY_TAG_URL = ITEMS_URL + '/tag/';
 export const ITEM_BY_ID_URL = ITEMS_URL + '/';
+export const ITEM_CREATE = ITEMS_URL + '/create';
 
 export const USER_LOGIN_URL = BASE_URL + '/users/login';
 export const USER_REGISTER_URL = BASE_URL + '/users/register';

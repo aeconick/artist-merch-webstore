@@ -33,6 +33,8 @@ import { OrderTrackPageComponent } from './components/pages/order-track-page/ord
 import { FooterComponent } from './components/partials/footer/footer.component';
 import { AboutPageComponent } from './components/pages/about-page/about-page.component';
 import { ProfilePageComponent } from './components/pages/profile-page/profile-page.component';
+import { WelcomePageComponent } from './components/pages/welcome-page/welcome-page.component';
+import { CreateItemPageComponent } from './components/pages/create-item-page/create-item-page.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +63,8 @@ import { ProfilePageComponent } from './components/pages/profile-page/profile-pa
     FooterComponent,
     AboutPageComponent,
     ProfilePageComponent,
+    WelcomePageComponent,
+    CreateItemPageComponent,
   ],
   imports: [
     BrowserModule,
