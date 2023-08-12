@@ -1,0 +1,50 @@
+@import url(" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css");
+
+.container {
+  position: relative;
+}
+
+img {
+  width: 100%;
+  object-fit: contain;
+}
+
+h1 {
+  position: absolute;
+  color: #612e66;
+  font-size: 5rem;
+  top: 6rem;
+  left: 50rem;
+  text-shadow: 0.6px -0.6px 2px;
+}
+
+ul {
+  display: flex;
+  gap: 1rem;
+  position: absolute;
+  top: 12.4rem;
+  left: 52rem;
+}
+
+ul li a {
+  color: 612e66;
+  font-size: 4rem;
+  color: #612e66;
+}
+
+ul li a:hover {
+  cursor: pointer;
+  color: #a562ac;
+  text-shadow: 0.6px -0.6px 2px;
+}
+
+h2 {
+  text-align: center;
+  line-height: 2rem;
+  position: absolute;
+  color: #a562ac;
+  font-size: 0.9rem;
+  top: 20rem;
+  left: 49.1rem;
+  text-shadow: 0.6px -0.6px 2px;
+}
