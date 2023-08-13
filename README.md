@@ -19,7 +19,8 @@ The application consists of two parts - **Public** (Accessible without authentic
  This part is visible only to authenticated users. It lets them have access to:
  - ***Profile*** page - user can see their profile info and the past purchases they've made.
  - ***Checkout*** pages - only authenticated users can buy merch from the store, which means that all pages having to do with completing an order are accessable only to logged in users.
-
+  - ***Admin*** functionality - the admin can create and delete items using the admin panel.
+  
  ### Application Architecture
 The app is divided to multiple pages, which share partials components between them, like:
 - Header
