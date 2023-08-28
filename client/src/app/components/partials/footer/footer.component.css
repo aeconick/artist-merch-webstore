@@ -3,13 +3,13 @@
 footer {
     background-color: #ad9db8;
     color: #0f1d28;
-    align-items: center;
+    /* align-items: center; */
     padding: 20px 30px;
-    display: flex;
-    justify-content: space-between;
+    display: none;
+    /* justify-content: space-between; */
 }
 
-.footer article {
+/* .footer article {
     display: flex;
     gap: 10px;
 }
@@ -17,4 +17,4 @@ footer {
 a {
     text-decoration: none;
     color: #0f1d28;
-  }
+  } */
