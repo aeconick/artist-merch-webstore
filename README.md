@@ -1,6 +1,6 @@
 # artist-merch-webstore
 
-**TStore** is a web application (Single Page Application) using AngularJS i've made as a final project for [SoftUni's](https://softuni.bg/) AngularJS Course. The app is a basic internet store that lets users buy merch from their favorite artist. The application uses Express server as a backend and [MongoDB Atlas](https://www.mongodb.com/atlas/database) as a NoSQL database.
+**TStore** is a web application (Single Page Application) using AngularJS i've made as a final project for [SoftUni's](https://softuni.bg/) AngularJS Course. The app is a internet store that lets users buy merch from their favorite artist. The application uses Express server as a backend and [MongoDB Atlas](https://www.mongodb.com/atlas/database) as a NoSQL database.
 
 ## Application Structure
 The application consists of two parts - **Public** (Accessible without authentication) and **Private** (Available for Registered Users).
@@ -41,7 +41,7 @@ Components use services to make api calls and share access to data. The services
  - ***Order*** service - deals with the orders data.
  - ***User*** service - deals with all the information about the user.
 
- The shated folder has four folder that add additional functionality:
+ The shared folder has four folder that add additional functionality:
  - ***Constants*** - stores files with constant data like: **urls**.
  - ***Interceptors*** - stores files with interceptors like: **loading.interceptor**.
  - ***Interfaces*** - stores files with interfaces like: **IUserLogin** or **IUserRegister**.
@@ -54,14 +54,12 @@ Components use services to make api calls and share access to data. The services
 1. To start the server you need to open a new terminal at the **server** directory and run the command:
 
 ```console
-npm i
 npm start
 ```
 
 2. To start the client you need to open a new terminal at the **client** directory and run the command:
 
 ```console
-npm i
 npm start
 ```
 
